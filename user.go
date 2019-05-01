@@ -14,5 +14,6 @@ func getUser(c echo.Context) error {
 func createUser(c echo.Context) error {
 	name := c.FormValue("name")
 	email := c.FormValue("email")
-	return c.String(http.StatusAccepted, "name="+name+", email="+email)
+	address := c.FormValue("address")
+	return c.String(http.StatusAccepted, "name="+name+", email="+email+", address="+address)
 }
