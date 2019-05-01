@@ -12,5 +12,6 @@ func main() {
 		return c.String(http.StatusOK, "Hello World!")
 	})
 	e.GET("/users/:id", getUser)
+	e.POST("/users", createUser)
 	e.Logger.Fatal(e.Start(":8888"))
 }
