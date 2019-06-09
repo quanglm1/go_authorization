@@ -6,8 +6,13 @@ import (
 	"github.com/labstack/echo"
 )
 
+func addUsersAPI(e *echo.Echo) {
+	e.GET("/users/:id", getUser)
+	e.POST("/users", createUser)
+}
+
 func getUser(c echo.Context) error {
-	id := c.Param("id")
+	id := c.Param("id") + "a"
 	return c.String(http.StatusOK, id)
 }
 

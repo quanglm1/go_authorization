@@ -11,7 +11,6 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello World!")
 	})
-	e.GET("/users/:id", getUser)
-	e.POST("/users", createUser)
+	addUsersAPI(e)
 	e.Logger.Fatal(e.Start(":8888"))
 }
